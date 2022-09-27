@@ -1,3 +1,6 @@
 .body {
     background: #0057b7;
+    height: 70px;
+    width: 100%;
+    padding: 5px;
 }

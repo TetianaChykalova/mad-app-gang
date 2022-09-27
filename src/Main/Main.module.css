@@ -1,0 +1,12 @@
+.body {
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 992px) {
+    .body {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+}

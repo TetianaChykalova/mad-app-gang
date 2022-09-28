@@ -11,11 +11,8 @@ let apiData = axios.get('https://api.spacexdata.com/v4/dragons')
     .then(data => {
         apiData = data;
     });
-console.log(apiData);
 
 function App(props) {
-
-    console.log(apiData.data);
 
   return (
       <BrowserRouter>

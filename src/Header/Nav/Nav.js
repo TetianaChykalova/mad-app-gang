@@ -6,6 +6,9 @@ const Nav = (props) => {
         <nav className={style.nav}>
             <ul>
                 <li>
+                    <NavLink to='/home'>Home</NavLink>
+                </li>
+                <li>
                     <NavLink to='/dragon_1'>Dragon 1</NavLink>
                 </li>
                 <li>

@@ -17,3 +17,26 @@
     height: 100%;
     object-fit: cover;
 }
+
+@media (max-width: 992px) {
+    .content {
+        max-width: 300px;
+        max-height: 300px;
+    }
+}
+@media (max-width: 767px) {
+    .content {
+        max-width: 400px;
+        max-height: 400px;
+    }
+    .content:hover {
+        border-left: #ffd700 15px solid;
+        transform: scale(105%);
+        transition: all 0.5s ease-in 0s;
+    }
+    .content img {
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+    }
+}

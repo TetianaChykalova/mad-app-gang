@@ -5,12 +5,12 @@
     max-width: 400px;
     max-height: 400px;
     border-left: #0057b7 15px solid;
-    transition: all 0.5s ease-in 0s;
+    transition: all 0.3s ease-in 0s;
 }
 .content:hover {
     border-left: #ffd700 15px solid;
     transform: scale(130%);
-    transition: all 0.5s ease-in 0s;
+    transition: all 0.3s ease-in 0s;
 }
 .content img {
     width: 100%;

@@ -1,0 +1,10 @@
+   // import {useMemo} from "react";
+
+    // let apiData = useMemo(() => {
+    //     axios.get('https://api.spacexdata.com/v4/dragons')
+    //         .then(data => {
+    //             apiData = data;
+    //         })
+    // }, ['https://api.spacexdata.com/v4/dragons'])
+    //
+    // console.log(apiData);

@@ -4,7 +4,9 @@ import Header from "./Header/Header";
 import Home from "./Home/Home";
 import DragonOne from "./Main/Dragon_1/Dragon_1";
 import DragonTwo from "./Main/Dragon_2/Dragon_2";
-import {Route, Routes, HashRouter, Navigate} from "react-router-dom";
+import {Route, Routes, Navigate} from "react-router-dom";
+import {HashRouter} from 'react-router-dom'
+// import {BrowserRouter} from 'react-router-dom'
 import * as axios from "axios";
 
 let apiData = axios.get('https://api.spacexdata.com/v4/dragons')

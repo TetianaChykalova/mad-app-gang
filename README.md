@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# SpaceX
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The SpaceX app displays information about dragons.
 
-## Available Scripts
+## About app
 
-In the project directory, you can run:
+This app uses additional dependencies Axios, react-router-dom, and react-icons. These dependencies are written in the package.json file
 
-### `npm start`
+    "axios": "^0.27.2"
+    "react-icons": "^4.4.0"
+    "react-router-dom": "^6.4.1"
+    
+When working with the API, I encountered the following problem: the API request stopped working when building static files in docker, although everything worked locally. So I had to fix this problem in quick mode. And I succeeded. The application works correctly.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Unfortunately, I was unable to implement an automatic display of all dragons and user registration. But I will work on these questions before the technical interview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## About build and deploy
 
-### `npm test`
+##### If you need to work with the code, write npm install in your terminal, then all the necessary dependencies will be added for you locally
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    npm install
 
-### `npm run build`
+You can click Dragon 1 or Dragon 2 to see detailed information about the fallen dragon. Also, if you are on the home page, you can click on one of the pictures in the center of the page.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### The application is hosted using Docker, Nginx, and AWS EC2, ECR, Route53. Security certificate added using Certbot.
+##### If it is necessary to update the application, stop the "daemon" and perform the following actions:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Build a new static file using the docker build
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    docker build -t <<tag>> .
+    
+Push a local Docker representation using the docker push
 
-### `npm run eject`
+    docker push <<tag>>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+##### Next, use the key to go to the service and execute the following commands on behalf of the root
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Download the latest version of the application using the docker pull
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    sudo docker pull <<tag>>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Run the new version as a "daemon" (in the example, the port used during the first setup is specified)
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    sudo docker run -d -p 127.0.0.1:8080:80 <<tag>>
+    
+## About candidate
+### You can find out more about the candidate's experience and skills at the link
+https://tetiana-chykalova.click/

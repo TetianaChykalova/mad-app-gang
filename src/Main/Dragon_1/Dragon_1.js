@@ -6,8 +6,8 @@ const DragonOne = (props) => {
 
     return (
         <div className={style.body}>
-            <MainImage img={props.data.flickr_images} />
-            <MainDescription data={props.data} />
+            <MainImage img={props.props.flickr_images} />
+            <MainDescription data={props.props} />
         </div>
     )
 }

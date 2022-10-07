@@ -1,30 +1,41 @@
-import style from './DragonImage.module.css'
+import style from '../../DragonImage.module.css'
+import {useState} from "react";
+import {FaArrowAltCircleLeft, FaArrowAltCircleRight} from "react-icons/fa";
 
 const DragonImage = (props) => {
+    const [current, setCurrent] = useState(0)
+    const length = props.img.length;
+
+    const nextSlide = () => {
+        setCurrent(current === length - 1 ? 0 : current + 1);
+    };
+
+    const prevSlide = () => {
+        setCurrent(current === 0 ? length - 1 : current - 1);
+    };
+
+    if (!Array.isArray(props.img) || props.img.length <= 0) {
+        return null;
+    }
+
 
     return (
-
-        <div className={style.body}>
+        <section className={style.body}>
             <div className={style.slider}>
+                <FaArrowAltCircleLeft className={style.leftArrow} onClick={prevSlide}/>
 
-                <div className={style.slides}>
-                    <div id="slide1">
-                        <img className={style.img} src={props.img[0]} alt=""/>
-                    </div>
-                    <div id="slide2">
-                        <img className={style.img} src={props.img[1]} alt=""/>
-                    </div>
-                    <div id="slide3">
-                        <img className={style.img} src={props.img[2]} alt=""/>
-                    </div>
-                </div>
+                {props.img.map((image, index) => {
+                    return (
+                        <div className={index === current ? `${style.slideActive}` : `${style.slide}`}>
+                            {index === current && (<img src={image} alt='dragon' className={style.image} />)}
+                        </div>
+                    )
+                })}
 
-                <a href="#slide1">1</a>
-                <a href="#slide2">2</a>
-                <a href="#slide3">3</a>
+                <FaArrowAltCircleRight className={style.rightArrow} onClick={nextSlide}/>
 
             </div>
-        </div>
+        </section>
     )
 }
 

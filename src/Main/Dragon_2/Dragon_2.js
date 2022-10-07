@@ -8,10 +8,10 @@ const DragonTwo = (props) => {
     return (
         <div className={style.body}>
             <div>
-                <DragonImage img={props.data.flickr_images} />
+                <DragonImage img={props.props.flickr_images} />
             </div>
             <div>
-                <DragonDescription data={props.data} />
+                <DragonDescription data={props.props} />
             </div>
         </div>
     )

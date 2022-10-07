@@ -9,8 +9,8 @@ const Home = (props) => {
             <h1>Dragons</h1>
             <p>choose the dragon you want to learn more about</p>
             <div className={style.content}>
-                <HomeDragonOne data={props.data.data[0].flickr_images[0]}/>
-                <HomeDragonTwo data={props.data.data[1].flickr_images[0]}/>
+                <HomeDragonOne data={props.props[0].flickr_images[0]}/>
+                <HomeDragonTwo data={props.props[1].flickr_images[0]}/>
             </div>
         </div>
     )
